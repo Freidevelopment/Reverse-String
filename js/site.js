@@ -32,6 +32,7 @@ function displayString(stringResult) {
     document.getElementById('msg').innerHTML = `Your string reversed is: <strong>${stringResult}</strong>`;
 
 
+}
 
   //   // display the new reversed string message
 //   Swal.fire({
@@ -40,7 +41,6 @@ function displayString(stringResult) {
 //     text: `Your string reversed is: <strong>${stringResult}</strong>`,
 //     backdrop: false
 // });
-}
 
 
 /* This works to reverse the String,

@@ -73,29 +73,67 @@
             <div class="col-12 col-lg-8">
                 <pre class="line-numbers">
                 <code class="language-js">
-                    function displayMessage() {
-                        let inputBox = document.getElementById('message');
-                        let message = inputBox.value;
-                    
-                        Swal.fire(
-                            {
-                                title: "Step Reverse",
-                                text: message,
-                                icon: "success",
-                                backdrop: false
-                            });                    
+                    // Get the String from the user
+                    function getValues() {
+                        // input = 'OLYMPUS'
+                        // Get the information from the user
+                        let inputString = document.getElementById('inputString').value;
+
+                        let stringResult = reverseString(inputString);
+
+                        displayString(stringResult);
+                    }
+
+
+                    // 
+                    function reverseString(inputString) {
+
+                        let result = '';
+
+                        for(let index = inputString.length - 1; index >= 0; index-- ) {
+                            // This will make it into an Array
+                            // result.push(inputString[index]);
+
+                            result += inputString[index];
+                        }
+
+
+                        return result;
+                    }
+
+                    function displayString(stringResult) {
+                        document.getElementById('alert').classList.remove('invisible');
+                        document.getElementById('msg').innerHTML = `Your string reversed is: &ltstrong>${stringResult}&lt/strong>`;
+
+
                     }
                 </code>
             </pre>
             </div>
             <!-- The code's explanation -->
             <div class="col-12 col-lg-4">
-                <p>The code is structured in one function.</p>
-                <h5><code>displayMessage()</code></h5>
+                <p>The code is structured in three functions.</p>
+                <h5><code>getValues()</code></h5>
                 <p>
-                    The <code>displayMessage</code> function gets the
-                    text from the input element and displays it in
-                    a Sweet Alert popup.
+                    The <code>getValues</code> function gets the
+                    string from the user and than sends the string to the 
+                    <code>reverseString</code> function. The result of this string is sent 
+                    to the <code>displayString</code> function.
+                </p>
+                <h5><code>reverseString()</code></h5>
+                <p>
+                    The <code>reverseString</code> function reverses
+                    the inputed string. This is done by using a for loop to go backward
+                    through the string and place them into a new string.
+                    which is sent back to the 
+                    <code>getValues</code> function.
+                </p>
+                <h5><code>displayString()</code></h5>
+                <p>
+                    The <code>displayString</code> function gets the
+                    reversed string from the <code>getValues</code> function. 
+                    This than makes the alert on the page visible by getting it by Id
+                     with the string that is sent bolded to show what was sent.
                 </p>
             </div>
         </div>
